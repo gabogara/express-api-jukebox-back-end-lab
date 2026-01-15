@@ -8,5 +8,5 @@ const trackSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Track = mongoose.model("Track", hootSchema);
+const Track = mongoose.model("Track", trackSchema);
 module.exports = Track;

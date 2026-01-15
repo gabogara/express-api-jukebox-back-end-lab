@@ -6,6 +6,8 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const logger = require("morgan");
 
+const tracksRouter = require("./controllers/tracks");
+
 mongoose.connect(process.env.MONGODB_URI);
 
 mongoose.connection.on("connected", () => {
@@ -14,6 +16,8 @@ mongoose.connection.on("connected", () => {
 
 app.use(cors());
 app.use(express.json());
+app.use(logger("dev"));
+app.use("/tracks", tracksRouter);
 
 // Routes go here
 
