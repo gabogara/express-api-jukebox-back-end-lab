@@ -33,6 +33,7 @@ router.get("/:trackId", async (req, res) => {
 });
 
 // PUT /tracks/:id
+// Update a track
 router.put("/:trackId", async (req, res) => {
   try {
     const track = await Track.findByIdAndUpdate(req.params.trackId, req.body, {
@@ -44,7 +45,15 @@ router.put("/:trackId", async (req, res) => {
   }
 });
 
-
-
+//DELETE /tracks/:trackId
+// Delete a track
+router.delete("/:trackId", async (req, res) => {
+  try {
+    const deletedTrack = await Track.findByIdAndDelete(req.params.trackId);
+    res.status(200).json(deletedTrack);
+  } catch (err) {
+    res.status(500).json({ err: err.message });
+  }
+});
 
 module.exports = router;
