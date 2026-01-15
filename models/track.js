@@ -4,6 +4,8 @@ const trackSchema = new mongoose.Schema(
   {
     title: { type: String, required: true },
     artist: { type: String, required: true },
+    coverArtUrl: { type: String },
+    soundClipUrl: { type: String },
   },
   { timestamps: true }
 );
