@@ -1,5 +1,5 @@
 {
-  "name": "xpress-api-jukebox-back-end-lab",
+  "name": "express-api-jukebox-back-end-lab",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {

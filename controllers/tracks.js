@@ -22,4 +22,14 @@ router.get("/", async (req, res) => {
   }
 });
 
+// GET /tracks/:id
+router.get("/:trackId", async (req, res) => {
+  try {
+    const track = await Track.findById(req.params.trackId);
+    res.status(200).json(track);
+  } catch (error) {
+    res.status(500).json({ err: err.message });
+  }
+});
+
 module.exports = router;
